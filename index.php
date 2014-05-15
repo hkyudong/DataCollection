@@ -59,7 +59,7 @@ if ($_SESSION['userID'] == null) {
 
 <div data-role="page">
   <div data-role="header" data-position="fixed">
-  <h1>当前用户id：<?php echo $_SESSION['userID']; ?></h1>
+  <h1>当前用户：<?php echo $_SESSION['username']; ?></h1>
   <a href="logout.php" data-role="button" class="ui-btn-right" >退出</a>
   </div>
   <div data-role="content">
@@ -107,20 +107,24 @@ if ($_SESSION['userID'] == null) {
       <label for="IM_HOMESTEAD_AREA" >原址宅基地面积：</label>
       <input type="text" name="IM_HOMESTEAD_AREA" id="IM_HOMESTEAD_AREA" >
       <label for="IM_IS_RECLAMATION" >原址是否具有复垦条件：</label>
-      <input type="text" name="IM_IS_RECLAMATION" id="IM_IS_RECLAMATION" >
+        <select name="IM_IS_RECLAMATION" id="IM_IS_RECLAMATION">
+            <option value="是">是</option>
+            <option value="否">否</option>
+        </select>
       <label> 搬迁前房屋以及住户照片：</label>
-      <button onclick="capturePhotoz();">拍照</button>
-      <img style="display:none;width:130px;height:80px;" id="smallImagesz" class="imgshow" src="">
+      <button onclick="capturePhoto();">拍照11</button>
+      <img style="display:none;width:130px;height:80px;" id="IM_APPROVAL_PHOTO" class="imgshow" src="">
       <label for="VILLAGE_OPINIONS" >村委会意见：</label>
       <input type="text" name="VILLAGE_OPINIONS" id="VILLAGE_OPINIONS" >
 
-      <input type="submit" data-inline="true" value="提交">
+      <div align="center"><input type="button" id="" value=" 提 交 "  onclick="tj();"></div>
     </form>
+
 
 
   </div>
   <div data-role="footer" data-position="inline">
-    <div align="center"><input type="button" id="" value=" 提 交 "  onclick="tj();"></div>
+    <h1>PowerBy yudong</h1>
   </div>
 </div>
 
